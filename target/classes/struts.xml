@@ -19,5 +19,8 @@
             <result name="input">/WEB-INF/jsp/index.jsp</result>
             <result name="success">/WEB-INF/jsp/success.jsp</result>
         </action>
+        <action name="locale" class="com.imipgroup.hieuvt.LocaleAction">
+            <result name="SUCCESS">/WEB-INF/jsp/index.jsp</result>
+        </action>
     </package>
 </struts>
