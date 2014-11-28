@@ -5,19 +5,31 @@ package com.imipgroup.hieuvt;
  */
 import com.opensymphony.xwork2.ActionSupport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StrutsAction extends ActionSupport {
 
     private static final long serialVersionUID = 1L;
     private String firstName;
     private String lastName;
+    private List<String> locations;
     private String location;
     private String message;
+
+    public StrutsAction(){
+        setLocations(new ArrayList<String>());
+        getLocations().add("Hanoi");
+        getLocations().add("Saigon");
+
+    }
 
 
     @Override
     public String execute() throws Exception {
         message = "Your entered input values are:";
         return ActionSupport.SUCCESS;
+//        return "hoho";
     }
 
     @Override
@@ -26,7 +38,7 @@ public class StrutsAction extends ActionSupport {
             addActionError(getText("error.firstName.required"));
         if (null == lastName || lastName.length() == 0)
             addActionError(getText("error.lastName.required"));
-        if (null == location || location.length() == 0)
+        if (null == locations || locations.size() == 0)
             addActionError(getText("error.location.required"));
     }
 
@@ -46,12 +58,12 @@ public class StrutsAction extends ActionSupport {
         this.lastName = lastName;
     }
 
-    public String getLocation() {
-        return location;
+    public List<String> getLocations() {
+        return locations;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLocations(List<String> locations) {
+        this.locations = locations;
     }
 
     public String getMessage() {
@@ -62,4 +74,11 @@ public class StrutsAction extends ActionSupport {
         this.message = message;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }
