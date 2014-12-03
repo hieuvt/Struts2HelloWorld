@@ -12,15 +12,15 @@
 
     <package name="default" extends="struts-default">
         <action name="">
-            <result>/WEB-INF/jsp/index.jsp</result>
+            <result>/jsp/index.jsp</result>
         </action>
         <action name="strutsAction" class="com.imipgroup.hieuvt.StrutsAction">
-            <result name="error">/WEB-INF/jsp/index.jsp</result>
-            <result name="input">/WEB-INF/jsp/index.jsp</result>
-            <result>/WEB-INF/jsp/success.jsp</result>
+            <result name="error">/jsp/index.jsp</result>
+            <result name="input">/jsp/index.jsp</result>
+            <result>/jsp/success.jsp</result>
         </action>
         <action name="locale" class="com.imipgroup.hieuvt.LocaleAction">
-            <result name="SUCCESS">/WEB-INF/jsp/index.jsp</result>
+            <result name="SUCCESS">/jsp/index.jsp</result>
         </action>
     </package>
 </struts>
